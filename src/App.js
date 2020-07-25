@@ -14,9 +14,17 @@ class App extends React.Component {
   }
 
   addToInput = val => {
-    this.setState({
-      input: this.state.input + val
-    })
+    if(val !== "x"){
+      this.setState({
+        input: this.state.input + val
+      })
+    }
+    else if(val === "x"){
+      val = "*"
+      this.setState({
+        input: this.state.input + val
+      })
+    }
   }
 
   equalHandle = () => {
